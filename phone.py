@@ -14,7 +14,22 @@ class Phone(Randommer):
         Returns:
             list: list of phone numbers
         '''
-        pass
+        url = self.base_url + 'Phone/Generate'
+        
+        payload = {
+                "CountryCode": CountryCode
+            }
+        headers = {
+                "Quantity" : Quantity
+            }
+        headers = {
+                "X-Api-Key" : api_key
+        }
+        response = requests.get(url, params=payload, headers=headers)
+        if response.status_code==200:
+            return response.json()
+        
+        return False
     
     def get_IMEI(self, api_key: str, Quantity: int) -> list:
         '''get bulk imei
@@ -26,7 +41,19 @@ class Phone(Randommer):
         Returns:
             list: list of phone numbers
         '''
-        pass
+        url = self.base_url + 'Phone/IMEI'
+        
+        payload = {
+                "Quantity" : Quantity
+            }
+        headers = {
+                "X-Api-Key": api_key
+            }
+        response = requests.get(url, params=payload, headers=headers)
+        if response.status_code==200:
+            return response.json()
+        
+        return False
     
     def is_valid(self, api_key: str, telephone: str, CountryCode: str) -> bool:
         '''get bulk imei
@@ -39,7 +66,22 @@ class Phone(Randommer):
         Returns:
             bool: is valid
         '''
-        pass
+        url = self.base_url + 'Phone/Validate'
+        
+        payload = {
+                "CountryCode": CountryCode
+            }
+        headers = {
+                "telephone" : telephone
+            }
+        headers = {
+                "X-Api-Key" : api_key
+        }
+        response = requests.get(url, params=payload, headers=headers)
+        if response.status_code==200:
+            return response.json()
+        
+        return False
     
     def get_countries(self, api_key: str) -> list:
         '''get countries
@@ -50,4 +92,9 @@ class Phone(Randommer):
         Returns:
             list: lsit of countries
         '''
-        pass
+        url = self.base_url + 'Phone/Countries'
+        headers={"X-Api-Key" : api_key}
+        response=requests.get(url, headers=headers)
+        if response.status_code==200:
+            return response.json()
+        return False
