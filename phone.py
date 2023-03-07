@@ -17,11 +17,10 @@ class Phone(Randommer):
         url = self.base_url + 'Phone/Generate'
         
         payload = {
-                "CountryCode": CountryCode
-            }
-        headers = {
+                "CountryCode": CountryCode,
                 "Quantity" : Quantity
             }
+        
         headers = {
                 "X-Api-Key" : api_key
         }
@@ -98,3 +97,6 @@ class Phone(Randommer):
         if response.status_code==200:
             return response.json()
         return False
+s=Phone()
+key = "2d794c6f46094ceb96bd719c1c26c984"
+print(s.generate(api_key=key, CountryCode="KZ", Quantity=3))
