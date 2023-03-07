@@ -17,10 +17,9 @@ class Name(Randommer):
         url = self.base_url + 'Name'
         
         payload = {
-                "nameType": nameType
-            }
-        headers = {
-                "quantity" : quantity
+                "nameType": nameType,
+            
+                "quantity" : quantity,
             }
         headers = {
                 "X-Api-Key" : api_key
@@ -65,7 +64,7 @@ class Name(Randommer):
             list: list of names
         '''
         url = self.base_url + 'Misc/Culutures'
-        headers={"X-Api-Key" : api_key}
+        headers={" X-Api-Key" : api_key}
         response=requests.get(url, headers=headers)
         if response.status_code==200:
             return response.json()
