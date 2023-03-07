@@ -68,9 +68,8 @@ class Phone(Randommer):
         url = self.base_url + 'Phone/Validate'
         
         payload = {
-                "CountryCode": CountryCode
-            }
-        headers = {
+                "CountryCode": CountryCode,
+            
                 "telephone" : telephone
             }
         headers = {
