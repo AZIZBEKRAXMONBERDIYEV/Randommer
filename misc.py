@@ -34,9 +34,8 @@ class Misc(Randommer):
         url = self.base_url + 'Finance/Vat/Validator'
         
         payload = {
-                "country" : culture
-            }
-        headers = {
+                "country" : culture,
+            
                 "vat": number
             }
         headers = {
