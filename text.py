@@ -17,13 +17,11 @@ class Text(Randommer):
         '''
         url = self.base_url + 'Text/LoremIpsum'
         headers={
-            "loremType" : loremType
-            }
-        headers={
-            "type" : type
-            }
-        headers={
-            "number" : number
+            "loremType" : loremType,
+            
+            "type" : type,
+            
+            "number" : number,
             }
         headers={
             "X-Api-Key" : api_key
@@ -48,12 +46,10 @@ class Text(Randommer):
         '''
         url = self.base_url + 'Text/LoremIpsum'
         headers={
-            'length' : length
-            }
-        headers={
-            "hasDigits" : hasDigits
-            }
-        headers={
+            'length' : length,
+            
+            "hasDigits" : hasDigits,
+            
             "hasUppercase" : hasUppercase
             }
         headers={
